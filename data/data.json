@@ -1,0 +1,102 @@
+[
+	{
+		"month": "January",
+		"Week1": 8,
+		"Week2": 40,
+		"Week3": 75,
+		"Week4": 65,
+		"Week5": 90,
+		"Week6": 8
+	},
+	{
+		"month": "February",
+		"Week1": 25,
+		"Week2": 55,
+		"Week3": 75,
+		"Week4": 95,
+		"Week5": 15
+	},
+	{
+		"month": "March",
+		"Week1": 30,
+		"Week2": 25,
+		"Week3": 95,
+		"Week4": 70,
+		"Week5": 45
+	},
+	{
+		"month": "April",
+		"Week1": 20,
+		"Week2": 17,
+		"Week3": 45,
+		"Week4": 65,
+		"Week5": 50
+	},
+	{
+		"month": "May",
+		"Week1": 22,
+		"Week2": 66,
+		"Week3": 82,
+		"Week4": 90,
+		"Week5": 30
+	},
+	{
+		"month": "June",
+		"Week1": 85,
+		"Week2": 55,
+		"Week3": 65,
+		"Week4": 88,
+		"Week5": 78
+	},
+	{
+		"month": "July",
+		"Week1": 25,
+		"Week2": 55,
+		"Week3": 80,
+		"Week4": 60,
+		"Week5": 88,
+		"Week6": 10
+	},
+	{
+		"month": "August",
+		"Week1": 35,
+		"Week2": 85,
+		"Week3": 79,
+		"Week4": 89,
+		"Week5": 78,
+		"Week6": 45
+	},
+	{
+		"month": "September",
+		"Week1": 22,
+		"Week2": 75,
+		"Week3": 89,
+		"Week4": 60,
+		"Week5": 50
+	},
+	{
+		"month": "October",
+		"Week1": 5,
+		"Week2": 35,
+		"Week3": 45,
+		"Week4": 60,
+		"Week5": 50,
+		"Week6": 15
+	},
+	{
+		"month": "November",
+		"Week1": 25,
+		"Week2": 45,
+		"Week3": 35,
+		"Week4": 40,
+		"Week5": 14
+	},
+	{
+		"month": "December",
+		"Week1": 20,
+		"Week2": 15,
+		"Week3": 32,
+		"Week4": 25,
+		"Week5": 20
+	}
+]

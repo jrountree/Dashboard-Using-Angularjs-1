@@ -1,0 +1,799 @@
+/* ANIMATED CLASSES */
+.slideout {
+    display: block;
+    position: relative;
+    left: 0;
+    x-transition: all 4.5s ease;
+    animation: run 2s normal forwards;
+}
+.slidein {
+    display: block;
+    position: relative;
+    left: -100%;
+    x-transition: all 4.5s ease;
+    animation: runin 2s normal forwards;
+}
+
+.btnup {
+    display: block;
+    top: 50px;
+    y-transition: all 4.5s ease;
+    animation: btnup 2s normal forwards;
+}
+.btndown {
+    display: block;
+    top: 0;
+    y-transition: all 4.5s ease;
+    animation: btndown 2s normal forwards;
+}
+
+.menudropdown {
+    position: absolute;
+    width: 145px;
+    margin-top: 5px;
+    margin-left: -7px;
+    left: 8px;
+    top: -375px;
+    y-transition: all 4.5s ease;
+    animation: menudown 1s normal forwards;
+}
+
+.menudropup {
+    position: absolute;
+    width: 145px;    
+    margin-top: 5px;
+    margin-left: -7px;
+    left: 8px;
+    top: -5px;
+    y-transition: all 4.5s ease;
+    animation: menuup 1s normal forwards;
+}
+
+
+.wkmenudropdown {
+    position: absolute;
+    width: 145px;
+    margin-top: 5px;
+    margin-left: -7px;
+    left: 8px;
+    top: -375px;
+    y-transition: all 4.5s ease;
+    animation: wkmenudown 1s normal forwards;
+}
+
+.wkmenudropup {
+    position: absolute;
+    width: 145px;    
+    margin-top: 5px;
+    margin-left: -7px;
+    left: 8px;
+    top: -5px;
+    y-transition: all 4.5s ease;
+    animation: wkmenuup 1s normal forwards;
+}
+
+
+.week-list:hover > .week-drop-down-cont {
+    height: 30px;
+    y-transition: all 4.5s ease;
+    animation: wkgodown 1s normal forwards;
+}
+
+.week-drop-down-cont {
+    height: 195px;
+    y-transition: all 4.5s ease;
+    animation: wkgoup 1s normal forwards;
+}
+
+
+.month-list:hover > .drop-down-cont {
+    height: 30px;
+    y-transition: all 4.5s ease;
+    animation: godown 1s normal forwards;
+}
+
+.drop-down-cont {
+    height: 375px;
+    y-transition: all 4.5s ease;
+    animation: goup 1s normal forwards;
+}
+
+.wkanimatein {
+    width: 0%;
+    x-transition: all 4.5s ease;
+    animation: wkup 2s normal forwards;
+}
+.wkanimateout {
+    width: 0%;
+    y-transition: all 4.5s ease;
+    animation: wkdwn 2s normal forwards;
+}
+
+.baranimatein {
+    height: 0%;
+    margin-top: 178px;
+    y-transition: all 4.5s ease;
+    animation: barup 2s normal forwards;
+}
+.baranimateout {
+    height: 0%;
+    margin-top: 178px;
+    y-transition: all 4.5s ease;
+    animation: bardwn 2s normal forwards;
+}
+.yranimatein {
+    height: 0%;
+    margin-top: 205px;
+    y-transition: all 4.5s ease;
+    animation: yrup 2s normal forwards;
+}
+.yranimateout {
+    height: 0%;
+    margin-top: 205px;
+    y-transition: all 4.5s ease;
+    animation: yrdwn 2s normal forwards;
+}
+.onswitch{
+    transition: visibility 0s, opacity 0.5s linear;
+    animation: turnon 2s normal forwards;
+}
+.offswitch{
+    transition: visibility 0s, opacity 0.5s linear;
+    animation: turnoff 2s normal forwards;
+}
+
+
+@keyframes run {
+    0% { left: 0;}
+    100%{ left: -100%;}
+}
+@keyframes runin {
+    0% { left: -100%;}
+    100%{ left: 0;}
+}
+@keyframes btnup {
+    50% { top: 50px;}
+    100%{ top: 0;}
+}
+@keyframes btndown {
+    0% { top: 0;}
+    45%{ top: 50px;}
+}
+@keyframes menudown {
+    0% { top: -375px;}
+    100%{ top: -5px;}
+}
+@keyframes menuup {
+    0% { top: -5px;}
+    100%{ top: -375px;}
+}
+@keyframes wkmenudown {
+    0% { top: -195px;}
+    100%{ top: -5px;}
+}
+@keyframes wkmenuup {
+    0% { top: -5px;}
+    100%{ top: -195px;}
+}
+@keyframes wkgodown {
+    0% { height: 30px;}
+    100%{ height: 195px;}
+}
+@keyframes wkgoup {
+    0% { height: 195px;}
+    100%{ height: 30px;}
+}
+
+@keyframes godown {
+    0% { height: 30px;}
+    100%{ height: 375px;}
+}
+@keyframes goup {
+    0% { height: 375px;}
+    100%{ height: 30px;}
+}
+@keyframes wkup {
+    50% { width: 0%;}
+    100%{ width: 100%;}
+}
+@keyframes wkdwn {
+    0% { width: 100%;}
+    45%{ width: 0%;}
+}
+@keyframes barup {
+    50% { height: 0%;
+         margin-top: 178px;}
+    100%{ height: 100%;
+         margin-top: 0px;}
+}
+@keyframes bardwn {
+    0% { height: 100%;
+         margin-top: 0px;}
+    45%{ height: 0%;
+         margin-top: 178px;}
+}
+@keyframes yrup {
+    50% { height: 0%;
+         margin-top: 205px;}
+    100%{ height: 100%;
+         margin-top: 0px;}
+}
+@keyframes yrdwn {
+    0% { height: 100%;
+         margin-top: 0px;}
+    45%{ height: 0%;
+         margin-top: 205px;}
+}
+@keyframes turnon {
+    80% { visibility: hidden;
+          opacity: 0;}
+    100%{ visibility: visible;
+          opacity: 1;}
+}
+@keyframes turnoff {
+    0% { visibility: visible;
+           opacity: 1;}
+    15% {  visibility: hidden;
+           opacity: 0;}
+}
+/* END ANIMATIONS */
+
+.frontpage {
+    background: #fff;
+    width: 100%;
+    height: calc(100vh - 69px);
+    display: block;
+    position: absolute;
+    z-index: 999;
+    left: 0;
+}
+
+.frontformhead {
+    text-align: center;
+}
+
+.frontform {
+    margin: 50px auto 0 auto;
+    width: 275px;
+}
+
+.totals p {
+    display: inline-block;
+    width: 130px;
+    font-weight: 600;
+}
+
+.totals {
+    
+}
+
+.frontpagereturn {
+    height: 50px;
+    display: inline-block;
+    position: absolute;
+    top: 19px;
+    left: 65%;
+    overflow: hidden;
+}
+
+.frontpagereturn p {
+    background: #42807d;
+    padding: 20px 15px 10px;
+    border-radius: 20px 20px 0 0;
+    color: #fff;
+    letter-spacing: 2px;
+    cursor: pointer;
+    position: relative;
+    top: 50px;
+}
+
+
+.dashbtn p {
+    text-align: center;
+    width: 100%;
+    background: #42807d;
+    color: #fff;
+    padding: 10px;
+    letter-spacing: 3px;
+    cursor: pointer;
+}
+
+.dashbtn p:hover,
+.frontpagereturn p:hover {
+    background: #24afa8;
+}
+
+
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.title {
+    text-align: center;
+}
+
+.half {
+    width: 50%;
+    border: solid;
+    margin: 0;
+    padding: 0;
+    float: left;
+    height: 500px;
+    border-width: 20px 10px;
+}
+
+.bottom {
+    float: left;
+    width: 100%;
+    border: solid;
+    height: calc(100vh - 569px);
+    border-width: 0px 10px 20px 10px;
+    background: #a8dee0;
+}
+
+.half h2 {
+    text-align: center;
+}
+
+
+
+.drop-down-cont,
+.week-drop-down-cont {
+    height: 20px;
+    overflow: hidden;
+    position: absolute;
+    width: 124%;
+    left: -2px;
+    top: 32px;
+}
+
+.wk-drop-down {
+    border: 1px solid;
+    padding: 5px;
+    background: #d0e4e6;
+    border-top: none;
+    position: absolute;
+    margin-top: 5px;
+    margin-left: -7px;
+    width: 145px;
+    top: -195px;
+    left: 8px;
+}
+
+.drop-down {
+    border: 1px solid;
+    padding: 5px;
+    background: #d0e4e6;
+    border-top: none;
+    position: absolute;
+    margin-top: 5px;
+    margin-left: -7px;
+    width: 145px;
+    top: -375px;
+    left: 8px;
+}
+
+.wk-drop-down ul li,
+.drop-down ul li {
+    padding: 5px;
+}
+
+.wk-drop-down ul li:hover,
+.drop-down ul li:hover {
+    font-weight: 600;
+    background: #ebf8f9;
+}
+
+.sub-txt {
+    color: #a09b9b;
+    font-style: italic;
+}
+
+/*:::::::::: WEEK SECTION ::::::::::*/
+
+.week-info {
+    width: calc(100% - 350px);
+    float: left;
+    padding: 0 20px;
+}
+
+.week-info h3 {
+    margin: 10px 0 0 0;
+}
+
+.week-info p {
+    margin: 0;
+}
+
+.week-info h5 {
+    margin: 0 0 5px 0;
+    font-weight: 600;
+}
+
+.weekly-container {
+    width: 350px;
+    height: 333px;
+    float: right;
+}
+
+.day-labels {
+    float: left;
+    height: 100%;
+    width: 18px;
+    margin: 0;
+}
+
+.day-totals {
+    float: left;
+    width: 18px;
+    height: 100%;
+    margin: 0 10px;
+}
+
+.weekly-container p {
+    height: calc(100% / 7);
+    margin: 0;
+    padding: 0;
+    line-height: 40px;
+    font-weight: 600;
+    text-align: right;
+}
+
+.week-graph {
+    float: left;
+    width: calc(100% - 56px);
+    height: 100%;
+}
+
+.week-bar {
+    height: calc(100% / 7);
+    margin: 0;
+    padding: 0;
+}
+
+
+.sun-bar {
+    width: 68%;
+    height: 100%;
+    background: #66559a;
+}
+
+.mon-bar {
+    width: 40%;
+    height: 100%;
+    background: #bfd679;
+}
+
+.tue-bar {
+    width: 86.66%;
+    height: 100%;
+    background: #c35f64;
+}
+
+.wed-bar {
+    width: 66.66%;
+    height: 100%;
+    background: #78a054;
+}
+
+.thu-bar {
+    width: 73.33%;
+    height: 100%;
+    background: #d68f5d;
+}
+
+.fri-bar {
+    width: 86.67%;
+    height: 100%;
+    background: #6383bd;
+}
+
+.sat-bar {
+    width: 60%;
+    height: 100%;
+    background: #eae89b;
+}
+
+/*:::::::::: MONTH SECTION ::::::::::*/
+.week-select,
+.month-select {
+    width: 100%;
+    padding: 0 20px;
+}
+
+.week-select p,
+.month-select p {
+    display: inline-block;
+}
+
+.week-list,
+.month-list {
+    border: 1px solid;
+    padding: 6px;
+    display: inline-block;
+    margin: 0 20px;
+    width: 145px;
+    background: #d0e4e6;
+    cursor: pointer;
+    position: absolute;
+}
+
+.week-list p,
+.month-list p {
+    margin: 0;
+    font-weight: 600;
+
+}
+
+.graph-scale {
+    float: left;
+    width: 50px;
+    text-align: right;
+    padding-right: 5px;
+}
+
+.month-info {
+    width: calc(100% - 350px);
+    float: left;
+    padding: 0 20px;
+}
+
+.profit-container h3 {
+    color: #037311;
+}
+
+/*:::::::::: GRAPH ::::::::::*/
+.graph-container {
+    width: 300px;
+    height: 250px;
+    margin: 25px;
+    float: right;
+}
+
+.graph {
+    height: 179px;
+    width: 250px;
+    float: left;
+}
+
+.graph-background {
+    width: 100%;
+    background: #000;
+    height: 100%;
+}
+
+.graph-scale {
+    float: left;
+    width: 50px;
+    text-align: right;
+    padding-right: 5px;
+    background: #d0e4e6;
+    height: 179px;
+}
+
+.mid-value {
+    margin: 60px 0;
+}
+
+.month-info p {
+    font-weight: 600;
+}
+
+.week1 {
+    color: #77ca85;
+}
+.week2 {
+    color: #ca7777;
+}
+.week3 {
+    color: #7785ca;
+}
+.week4 {
+    color: #cac477;
+}
+
+
+.bar {
+    width: 25%;
+    z-index: 2;
+    float: left;
+    display: flex;
+    align-items: flex-end;
+    cursor: pointer;
+}
+
+.bar p {
+    color: #fff;
+    text-align: center;
+}
+
+.bar1 {
+    background: #77ca85;
+    width: 100%;
+    height: 25%;
+}
+
+.bar2 {
+    background: #ca7777;
+    width: 100%;
+    height: 35%;
+}
+
+.bar3 {
+    background: #7785ca;
+    width: 100%;
+    height: 85%;
+}
+
+.bar4 {
+    background: #cac477;
+    width: 100%;
+    height: 60%;
+}
+
+.bar-label-container {
+    width: 100%;
+    background: #d0e4e6;
+    height: 23px;
+    float: left;
+    padding-left: 50px;
+}
+
+.bar-label p {
+    font-size: 10px;
+    font-weight: 600;
+}
+
+.bar-label {
+    text-align: right;
+    padding: 3px 0;
+    display: inline-block;
+    margin: 0 12px;
+}
+
+.graph-container h3 {
+    font-size: 20px;
+    text-align: center;
+    background: #d0e4e6;
+    padding: 12px 0;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+
+
+/*:::::::::: ANNUAL ::::::::::*/
+.yearly-container {
+    float: left;
+    width: 280px;
+    margin: 0 20px;
+}
+
+.yearly-graph-container {
+    float: right;
+    width: calc(100% - 345px);
+    height: 100%;
+    margin-right: 25px;
+}
+
+.yearly-graph {
+    width: 100%;
+    height: calc(100% - 50px);
+}
+
+.year-labels {
+    float: left;
+    width: 100%;
+    height: 30px;
+    padding: 4px 0;
+}
+
+.year-labels p {
+    display: inline-block;
+}
+
+.yearbar {
+    padding: 0 5px;
+    width: calc(100% / 12);
+    float: left;
+    display: flex;
+    align-items: flex-end;
+    cursor: pointer;
+}
+
+.yearbar p {
+    text-align: center;
+    color: #fff;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.year-labels p {
+    font-weight: 600;
+    width: calc(100% / 12);
+    margin: 0;
+    text-align: center;
+    padding: 0;
+    font-size: 13px;
+    float: left;
+}
+
+.jan {
+    background: #a54a4a;
+    height: 15.75%;
+    width: 100%;
+}
+
+.feb {
+    background: #a54a4a;
+    height: 12.85%;
+    width: 100%;
+}
+
+.mar {
+    background: #a54a4a;
+    height: 8.33%;
+    width: 100%;
+}
+
+.apr {
+    background: #a54a4a;
+    height: 20.5%;
+    width: 100%;
+}
+
+.may {
+    background: #a54a4a;
+    height: 28.75%;
+    width: 100%;
+}
+
+.jun {
+    background: #a54a4a;
+    height: 45.56%;
+    width: 100%;
+}
+
+.jul {
+    background: #a54a4a;
+    height: 90.85%;
+    width: 100%;
+}
+
+.aug {
+    background: #a54a4a;
+    height: 85.375%;
+    width: 100%;
+}
+
+.sep {
+    background: #a54a4a;
+    height: 60.95%;
+    width: 100%;
+}
+
+.oct {
+    background: #a54a4a;
+    height: 25.375%;
+    width: 100%;
+}
+
+.nov {
+    background: #a54a4a;
+    height: 20.75%;
+    width: 100%;
+}
+
+.dec {
+    background: #a54a4a;
+    height: 10.37%;
+    width: 100%;
+}
+
+
+
+*/
+/*:::::::::: ANIMATIONS ::::::::::*/

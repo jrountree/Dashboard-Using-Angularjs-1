@@ -1,0 +1,263 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Dashboard | Angularjs | By Jesse Rountree</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link rel="stylesheet" type="text/css" href="css/responsive.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- SCRIPTS -->
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.min.js"></script>
+		<script src="scripts/app.js"></script>
+		<script src="scripts/dashboardController.js"></script>
+		<script src="scripts/dashboardFactory.js"></script>
+	
+
+		<link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
+		<link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
+	</head>
+	<body ng-app="ngDashboard" ng-controller="dashboardController">
+		<h1 class="title">Lemonade Sales 2016</h1>
+		
+	
+	<!-- Home Page -->
+
+	<section class="frontpage" ng-class="class">
+		<div class="frontformhead">
+			<h1>Welcom to My Dashboard</h1>
+			<h2>Using AngularJS</h2>
+		</div>
+		<div class="frontform">
+			<h3>Lemonade Sales for 2016</h3>
+			<div class="totals">
+				<p>Total Profit:</p><p>profit</p>
+			</div>	
+			<div class="totals">
+				<p>Total Cups Sold:</p><p>cups</p>
+			</div>
+			<div class="dashbtn">
+				<p ng-click="slider()">View Dashboard Details</p>
+			</div>
+		</div>
+
+	</section>
+
+	<!-- Dashboard -->
+		<div class="frontpagereturn" >
+			<p ng-click="return()" ng-class="returnclass">View End of Year</p>
+		</div>
+		<section class="half">
+			<div class="week-title">
+				<h2>Week Selection</h2>
+				<!-- live version
+				<div class="week-select">
+					<p>Select Week</p>
+					<input type="button" class="week-list" ng-click="weekSelectClick()" />
+					
+						
+						<p>Week 3</p>
+						<div class="drop-down">
+							<ul>
+								<li>Week 1: <span class="sub-txt">1</span></li>
+								<li>Week 2: <span class="sub-txt">2-8</span> </li>
+								<li>Week 3: <span class="sub-txt">9-15</span></li>
+								<li>Week 4: <span class="sub-txt">16-22</span></li>
+								<li>Week 5: <span class="sub-txt">23-29</span></li>
+								<li>Week 5: <span class="sub-txt">30-31</span></li>
+							</ul>
+						</div>
+					
+				</div>-->
+				<!-- local version -->
+				<div class="week-select">
+					<p>Select Week</p>
+					<input type="button" class="week-list" ng-click="weekSelectClick()" />
+					<div class="week-list" ng-mouseenter="wkhovering=true; wkhovering2=false" ng-mouseleave="wkhovering=false; wkhovering2=true">
+						<p>Week 1</p>
+						<div class="week-drop-down-cont">
+							<div class="wk-drop-down" ng-class="{'wkmenudropdown':wkhovering, 'wkmenudropup':wkhovering2}" >
+								<ul>
+									<li>Week 1: <span class="sub-txt">1</span></li>
+									<li>Week 2: <span class="sub-txt">2-8</span> </li>
+									<li>Week 3: <span class="sub-txt">9-15</span></li>
+									<li>Week 4: <span class="sub-txt">16-22</span></li>
+									<li>Week 5: <span class="sub-txt">23-29</span></li>
+									<li>Week 5: <span class="sub-txt">30-31</span></li>
+								</ul>
+							</div>	
+						</div>
+					</div>
+				</div>	
+			</div>
+			<div class="week-info">
+				<h3>Week 3</h3>
+				<p>16 - 22</p>
+				<h4>Total Cups Sold: 85</h4>
+				<h5>Week Day Goal: 15 cups</h5>
+				<h5>Weekend Goal: 25 cups</h5>
+				<p class="sun">Sunday: 17 cups</p>
+				<p class="mon">Monday: 6 cups</p>
+				<p class="tue">Tuesday: 13 cups</p>
+				<p class="wed">Wednesday: 10 cups</p>
+				<p class="thu">Thursday: 11 cups</p>
+				<p class="fri">Friday: 13 cups</p>
+				<p class="sat">Saturday: 15 cups</p>
+				<div class="profit-container">
+					<h3>Total Profit: &#36;63.75</h3>
+				</div>
+			</div>
+			<div class="weekly-container">
+				<div class="day-labels">
+					<p>s</p>
+					<p>m</p>
+					<p>t</p>
+					<p>w</p>
+					<p>th</p>
+					<p>f</p>
+					<p>sa</p>
+				</div>
+				<div class="day-totals">
+					<p>17</p>
+					<p>6</p>
+					<p>13</p>
+					<p>10</p>
+					<p>11</p>
+					<p>13</p>
+					<p>15</p>
+				</div>
+				<div class="week-graph">
+					<div class="week-bar" ng-class="wkanimate"><div class="sun-bar"></div></div>
+					<div class="week-bar" ng-class="wkanimate"><div class="mon-bar"></div></div>
+					<div class="week-bar" ng-class="wkanimate"><div class="tue-bar"></div></div>
+					<div class="week-bar" ng-class="wkanimate"><div class="wed-bar"></div></div>
+					<div class="week-bar" ng-class="wkanimate"><div class="thu-bar"></div></div>
+					<div class="week-bar" ng-class="wkanimate"><div class="fri-bar"></div></div>
+					<div class="week-bar" ng-class="wkanimate"><div class="sat-bar"></div></div>
+				</div>
+			</div>	
+		</section>	
+		<section class="half">
+			<div class="month-title">
+				<h2>Month Selection</h2>
+				<div class="month-select">
+					<p>Select Month</p>
+					<!--<input type="button" class="month-list" ng-click="monthSelectClick()" />
+					<div class="month-list" ng-mouseenter="hovering=true; hovering2=false" ng-mouseleave="hovering=false; hovering2=true">-->
+					<input type="button" class="month-list"  />	
+					<div class="month-list" ng-click="dropdown()" ng-mouseenter="hovering=true" ng-mouseleave="hovering=false">
+						<p>October</p>
+						<!--<div class="drop-down" ng-controller="monthController">
+							<ul>
+								<li ng-click="monthSelectClick()" ng-repeat="months in monthdata">{{months.month}}</li>
+							</ul>-->
+
+						<div class="drop-down-cont">
+							<!--<div class="drop-down" ng-class="{'menudropdown':hovering, 'menudropup':hovering2}" >-->
+							<div class="drop-down" ng-class="{'menudropup':hovering}">
+								<ul>
+									<li>Month</li>
+									<li>Month</li>
+									<li>Month</li>
+									<li>Month</li>
+									<li>Month</li>
+									<li>Month</li>
+									<li>Month</li>
+									<li>Month</li>
+									<li>Month</li>
+									<li>Month</li>
+									<li>Month</li>
+									<li>Month</li>
+								</ul>
+							</div>	
+						</div>
+					</div>
+				</div>	
+			</div>
+			</div>
+			<div class="month-info">
+				<h3>October</h3>
+				<h4>Total Sales: 205 cups</h4>
+				<h5>Weekly Goal: 100</h5>
+				<p class="week1">Week 1: 25 cups</p>
+				<p class="week2">Week 2: 35 cups</p>
+				<p class="week3">Week 3: 85 cups</p>
+				<p class="week4">Week 4: 60 cups</p>
+				<div class="profit-container">
+					<h3>Total Profit: &#36;253.75</h3>
+				</div>
+			</div>
+		<!--<div class="graph-container" ng-repeat="month in months">--> <!--live vs -->
+			<div class="graph-container"> <!-- local version -->
+				<h3>October</h3>
+			<!-- <h3>{{week1.}}</h3> --> <!-- live vs -->
+				<div class="graph-scale">
+					<p>100</p>
+					<p class="mid-value">50</p>
+					<p>0</p>
+				</div>
+				<div class="graph">
+					<div class="graph-background">
+						<div class="bar" ng-click="week1SelectClick()" ng-class="baranimate"><div class="bar1"><p ng-class="turnoff">45</p></div></div>
+						<div class="bar" ng-click="week2SelectClick()" ng-class="baranimate"><div class="bar2"><p ng-class="turnoff">35</p></div></div>
+						<div class="bar" ng-click="week3SelectClick()" ng-class="baranimate"><div class="bar3"><p ng-class="turnoff">85</p></div></div>
+						<div class="bar" ng-click="week4SelectClick()" ng-class="baranimate"><div class="bar4"><p ng-class="turnoff">60</p></div></div>
+					</div>
+				</div>	
+		
+				<div class="bar-label-container">
+					<div class="bar-label"><p>Week 1</p></div>
+					<div class="bar-label"><p>Week 2</p></div>
+					<div class="bar-label"><p>Week 3</p></div>
+					<div class="bar-label"><p>Week 4</p></div>
+				</div>
+			</div>			
+		</section>
+		<section class="bottom">
+			<div class="yearly-container">
+				<h3>Annual Sales</h3>
+				<p>Total Profit: $3,600</p>
+				<p>Total Cups Sold: 4,800</p>
+				<p>Average Monthly Sale: $300</p>
+				<p>Cost per cup: $0.75</p>
+			</div>
+			<div class="yearly-graph-container">
+				<div class="yearly-graph">
+					<div class="yearbar" ng-click="month1SelectClick()" ng-class="yranimate"><div class="jan"><p ng-class="turnoff">157.50</p></div></div>
+					<div class="yearbar" ng-click="month2SelectClick()" ng-class="yranimate"><div class="feb"><p ng-class="turnoff">128.50</p></div></div>
+					<div class="yearbar" ng-click="month3SelectClick()" ng-class="yranimate"><div class="mar"><p ng-class="turnoff">83.33</p></div></div>
+					<div class="yearbar" ng-click="month4SelectClick()" ng-class="yranimate"><div class="apr"><p ng-class="turnoff">205.50</p></div></div>
+					<div class="yearbar" ng-click="month5SelectClick()" ng-class="yranimate"><div class="may"><p ng-class="turnoff">287.50</p></div></div>
+					<div class="yearbar" ng-click="month6SelectClick()" ng-class="yranimate"><div class="jun"><p ng-class="turnoff">455.60</p></div></div>
+					<div class="yearbar" ng-click="month7SelectClick()" ng-class="yranimate"><div class="jul"><p ng-class="turnoff">908.50</p></div></div>
+					<div class="yearbar" ng-click="month8SelectClick()" ng-class="yranimate"><div class="aug"><p ng-class="turnoff">853.75</p></div></div>
+					<div class="yearbar" ng-click="month9SelectClick()" ng-class="yranimate"><div class="sep"><p ng-class="turnoff">609.50</p></div></div>
+					<div class="yearbar" ng-click="month10SelectClick()" ng-class="yranimate"><div class="oct"><p ng-class="turnoff">253.75</p></div></div>
+					<div class="yearbar" ng-click="month11SelectClick()" ng-class="yranimate"><div class="nov"><p ng-class="turnoff">207.50</p></div></div>
+					<div class="yearbar" ng-click="month12SelectClick()" ng-class="yranimate"><div class="dec"><p ng-class="turnoff">103.70</p></div></div>
+				</div>
+				<div class="year-labels">
+					<p>Janurary</p>
+					<p>February</p>
+					<p>March</p>
+					<p>April</p>
+					<p>May</p>
+					<p>June</p>
+					<p>July</p>
+					<p>August</p>
+					<p>September</p>
+					<p>October</p>
+					<p>November</p>
+					<p>December</p>
+				</div>
+			</div>
+		</section>
+
+	</body>
+
+
+
+</html>
