@@ -21,8 +21,14 @@ var $monthname = "";
 	   		$scope.turnoff = "offswitch";
 	}
 		$scope.dropdown = function(){ //DROP DOWN
-			$scope.dropmenu = "menudropdown";
+			$scope.monthdrop = "menudropdown";
+			
 	}
+		$scope.removedropdown = function() {
+
+			$scope.monthdrop = "menudropup";
+	}
+
 		$scope.weekSelectClick = function(){
 			$log.log("Week List");
 	}

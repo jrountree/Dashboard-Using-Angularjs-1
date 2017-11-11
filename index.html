@@ -148,7 +148,7 @@
 					<!--<input type="button" class="month-list" ng-click="monthSelectClick()" />
 					<div class="month-list" ng-mouseenter="hovering=true; hovering2=false" ng-mouseleave="hovering=false; hovering2=true">-->
 					<input type="button" class="month-list"  />	
-					<div class="month-list" ng-class="dropmenu" ng-click="dropdown()" >
+					<div class="month-list" ng-click="dropdown()">
 						<p>October</p>
 						<!--<div class="drop-down" ng-controller="monthController">
 							<ul>
@@ -157,7 +157,7 @@
 
 						<div class="drop-down-cont">
 							<!--<div class="drop-down" ng-class="{'menudropdown':hovering, 'menudropup':hovering2}" >-->
-							<div class="drop-down" ng-class="{'menudropup':hovering}">
+							<div class="drop-down" ng-class="monthdrop" ng-mouseleave="removedropdown()">
 								<ul>
 									<li>Month</li>
 									<li>Month</li>
