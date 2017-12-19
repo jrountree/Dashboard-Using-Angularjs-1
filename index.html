@@ -122,11 +122,11 @@
 				<h2>Month Selection</h2>
 				<div class="month-select">
 					<h3>{{selected_value}}</h3>
-					<select class="dropdown" ng-model="selected_value" ng-repeat="monthdropdown in monthdata" ng-change="update()">
-						<option value="" disabled selected>Select New Month</option>
-						<option ng-repeat="monthlist in monthdropdown.monthstuff" value="{{monthlist.name}}">{{monthlist.name}}</option>						
-				    </select>
 					
+					<select class="dropdown" ng-model="selected_value" ng-change="update()">
+							<option value="" disabled selected>Select New Month</option>
+							<option ng-repeat="month in monthdata">{{month.month}}</option>
+					</select>
 				</div>
 			</div>	
 			<div class="month-info" ng-controller="monthController">
