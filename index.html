@@ -4,6 +4,7 @@
 		<meta charset="utf-8">
 		<title>Dashboard | Angularjs | By Jesse Rountree</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- EXTERNAL LINKS -->	
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 		<link rel="stylesheet" type="text/css" href="css/style.css">
 		<link rel="stylesheet" type="text/css" href="css/responsive.css">
@@ -15,19 +16,15 @@
 		<script src="scripts/app.js"></script>
 		<script src="scripts/dashboardController.js"></script>
 		<script src="scripts/dashboardFactory.js"></script>
-	
-
+	<!-- FAVICON -->
 		<link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
 		<link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
 	</head>
 	<body ng-app="ngDashboard" ng-controller="dashboardController">
 		<h1 class="title">Lemonade Sales 2016</h1>
-		
-	
 	<!-- Home Page -->
-
-	<section class="frontpage" ng-class="class">
-		<div class="frontformhead">
+	<section class="frontpage" ng-class="homeSlider">
+		<div class="centerTxt">
 			<h1>Welcome to My Dashboard</h1>
 			<h2>Using AngularJS</h2>
 		</div>
@@ -53,26 +50,6 @@
 		<section class="half">
 			<div class="week-title">
 				<h2>Week Selection</h2>
-				<!-- live version
-				<div class="week-select">
-					<p>Select Week</p>
-					<input type="button" class="week-list" ng-click="weekSelectClick()" />
-					
-						
-						<p>Week 3</p>
-						<div class="drop-down">
-							<ul>
-								<li>Week 1: <span class="sub-txt">1</span></li>
-								<li>Week 2: <span class="sub-txt">2-8</span> </li>
-								<li>Week 3: <span class="sub-txt">9-15</span></li>
-								<li>Week 4: <span class="sub-txt">16-22</span></li>
-								<li>Week 5: <span class="sub-txt">23-29</span></li>
-								<li>Week 5: <span class="sub-txt">30-31</span></li>
-							</ul>
-						</div>
-					
-				</div>-->
-				<!-- local version -->
 				<div class="week-select">
 					<p>Select Week</p>
 					<input type="button" class="week-list" ng-click="weekSelectClick()" />
@@ -80,7 +57,7 @@
 						<p>Week 1</p>
 						<div class="week-drop-down-cont">
 							<div class="wk-drop-down" ng-class="{'wkmenudropdown':wkhovering, 'wkmenudropup':wkhovering2}" >
-								<ul>
+								<ul> <!--This data will be pulled in from json file later -->
 									<li>Week 1: <span class="sub-txt">1</span></li>
 									<li>Week 2: <span class="sub-txt">2-8</span> </li>
 									<li>Week 3: <span class="sub-txt">9-15</span></li>
@@ -91,9 +68,9 @@
 							</div>	
 						</div>
 					</div>
-				</div>	
+				</div>
 			</div>
-			<div class="week-info">
+			<div class="week-info"><!--This data will be pulled in from json file later -->
 				<h3>Week 3</h3>
 				<p>16 - 22</p>
 				<h4>Total Cups Sold: 85</h4>
@@ -120,7 +97,7 @@
 					<p>f</p>
 					<p>sa</p>
 				</div>
-				<div class="day-totals">
+				<div class="day-totals"><!--This data will be pulled in from json file later -->
 					<p>17</p>
 					<p>6</p>
 					<p>13</p>
@@ -129,7 +106,7 @@
 					<p>13</p>
 					<p>15</p>
 				</div>
-				<div class="week-graph">
+				<div class="week-graph"><!--This data will be pulled in from json file later -->
 					<div class="week-bar" ng-class="wkanimate"><div class="sun-bar"></div></div>
 					<div class="week-bar" ng-class="wkanimate"><div class="mon-bar"></div></div>
 					<div class="week-bar" ng-class="wkanimate"><div class="tue-bar"></div></div>
@@ -140,67 +117,44 @@
 				</div>
 			</div>	
 		</section>	
-		<section class="half">
+		<section class="half" ng-controller="monthController">
 			<div class="month-title">
 				<h2>Month Selection</h2>
 				<div class="month-select">
-					<p>Select Month</p>
-					<!--<input type="button" class="month-list" ng-click="monthSelectClick()" />
-					<div class="month-list" ng-mouseenter="hovering=true; hovering2=false" ng-mouseleave="hovering=false; hovering2=true">-->
-					<input type="button" class="month-list"  />	
-					<div class="month-list" ng-click="dropdown()">
-						<p>October</p>
-						<!--<div class="drop-down" ng-controller="monthController">
-							<ul>
-								<li ng-click="monthSelectClick()" ng-repeat="months in monthdata">{{months.month}}</li>
-							</ul>-->
-
-						<div class="drop-down-cont">
-							<!--<div class="drop-down" ng-class="{'menudropdown':hovering, 'menudropup':hovering2}" >-->
-							<div class="drop-down" ng-class="monthdrop" ng-mouseleave="removedropdown()">
-								<ul>
-									<li>Month</li>
-									<li>Month</li>
-									<li>Month</li>
-									<li>Month</li>
-									<li>Month</li>
-									<li>Month</li>
-									<li>Month</li>
-									<li>Month</li>
-									<li>Month</li>
-									<li>Month</li>
-									<li>Month</li>
-									<li>Month</li>
-								</ul>
-							</div>	
-						</div>
-					</div>
-				</div>	
-			</div>
-			</div>
-			<div class="month-info">
-				<h3>October</h3>
+					<h3>{{selected_value}}</h3>
+					<select class="dropdown" ng-model="selected_value" ng-repeat="monthdropdown in monthdata" ng-change="update()">
+						<option value="" disabled selected>Select New Month</option>
+						<option ng-repeat="monthlist in monthdropdown.monthstuff" value="{{monthlist.name}}">{{monthlist.name}}</option>						
+				    </select>
+					
+				</div>
+			</div>	
+			<div class="month-info" ng-controller="monthController">
+				<h3>{{monthdisplay}}</h3>
+				<!--<h4>Total Sales: 205 cups</h4>-->
 				<h4>Total Sales: 205 cups</h4>
 				<h5>Weekly Goal: 100</h5>
+				<p ng-repeat="week in monthdata">Week {{week.id}}: {{week.info}} cups</p><!--This data will be pulled in from json file later -->
+				
 				<p class="week1">Week 1: 25 cups</p>
 				<p class="week2">Week 2: 35 cups</p>
 				<p class="week3">Week 3: 85 cups</p>
 				<p class="week4">Week 4: 60 cups</p>
+
 				<div class="profit-container">
-					<h3>Total Profit: &#36;253.75</h3>
+					<h3>Total Profit: &#36;253.75</h3><!--This data will be pulled in from json file later -->
 				</div>
 			</div>
-		<!--<div class="graph-container" ng-repeat="month in months">--> <!--live vs -->
-			<div class="graph-container"> <!-- local version -->
-				<h3>October</h3>
-			<!-- <h3>{{week1.}}</h3> --> <!-- live vs -->
+
+			<div class="graph-container"><!--This data will be pulled in from json file later -->
+				<h3>{{monthdisplay}}</h3>
 				<div class="graph-scale">
 					<p>100</p>
 					<p class="mid-value">50</p>
 					<p>0</p>
 				</div>
 				<div class="graph">
-					<div class="graph-background">
+					<div class="graph-background"><!--This data will be pulled in from json file later -->
 						<div class="bar" ng-click="week1SelectClick()" ng-class="baranimate"><div class="bar1"><p ng-class="turnoff">45</p></div></div>
 						<div class="bar" ng-click="week2SelectClick()" ng-class="baranimate"><div class="bar2"><p ng-class="turnoff">35</p></div></div>
 						<div class="bar" ng-click="week3SelectClick()" ng-class="baranimate"><div class="bar3"><p ng-class="turnoff">85</p></div></div>
@@ -218,14 +172,14 @@
 		</section>
 		<section class="bottom">
 			<div class="yearly-container">
-				<h3>Annual Sales</h3>
+				<h3>Annual Sales</h3><!--This data will be pulled in from json file later -->
 				<p>Total Profit: $3,600</p>
 				<p>Total Cups Sold: 4,800</p>
 				<p>Average Monthly Sale: $300</p>
 				<p>Cost per cup: $0.75</p>
 			</div>
 			<div class="yearly-graph-container">
-				<div class="yearly-graph">
+				<div class="yearly-graph"><!--This data will be pulled in from json file later -->
 					<div class="yearbar" ng-click="month1SelectClick()" ng-class="yranimate"><div class="jan"><p ng-class="turnoff">157.50</p></div></div>
 					<div class="yearbar" ng-click="month2SelectClick()" ng-class="yranimate"><div class="feb"><p ng-class="turnoff">128.50</p></div></div>
 					<div class="yearbar" ng-click="month3SelectClick()" ng-class="yranimate"><div class="mar"><p ng-class="turnoff">83.33</p></div></div>
@@ -240,7 +194,7 @@
 					<div class="yearbar" ng-click="month12SelectClick()" ng-class="yranimate"><div class="dec"><p ng-class="turnoff">103.70</p></div></div>
 				</div>
 				<div class="year-labels">
-					<p>Janurary</p>
+					<p>Janurary</p><!--This data will be pulled in from json file later -->
 					<p>February</p>
 					<p>March</p>
 					<p>April</p>
