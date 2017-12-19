@@ -1,28 +1,3 @@
-var week = [
-	"Week 1",
-	"Week 2",
-	"Week 3",
-	"Week 4",
-	"Week 5",
-	"Week 6"
-	];
-
-var month = [
-	"January",
-	"February",
-	"March",
-	"April",
-	"May",
-	"June",
-	"July",
-	"August",
-	"September",
-	"October",
-	"November",
-	"December"
-	];
-
-
 angular
 	.module('ngDashboard')
 	.factory('dashboardFactory', function($http) {
@@ -31,11 +6,26 @@ angular
 			return $http.get('data/data.json');
 		}
 
+
 		return {
 			getMonthData: getMonthdata
 		}
 
 	});
+// Variables
+var weeknumber = 1;
+var cupnumber = 0;
+var weekstart = "<p class='week" + weeknumber + "'>Week " +  weeknumber + ": " + cupnumber + " cups</p>";
+var monthNames = ["January", "February", "March", "April", "May", "June",
+  "July", "August", "September", "October", "November", "December"
+];
+var d = new Date();
+var currentMonth = monthNames[d.getMonth()];
+var monthHighlight ;
+
+
+
+
 
 
 /*
