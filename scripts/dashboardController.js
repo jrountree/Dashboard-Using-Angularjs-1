@@ -21,7 +21,7 @@ var ngDashboard = angular
 	}
 		$scope.dropdown = function(){ //DROP DOWN
 			$scope.monthdrop = "menudropdown";
-			
+
 	}
 		$scope.removedropdown = function() {
 
@@ -37,7 +37,7 @@ var ngDashboard = angular
 		$scope.monthdata;
 		dashboardFactory.getMonthData().then(function(data) {
 			$scope.monthdata = data.data;
-			
+
 			console.log('This is a Success.  GOOD FOR YOU BITCH');
 			console.log(currentMonth);
 		}, function(error) {
@@ -52,7 +52,7 @@ var ngDashboard = angular
 			$scope.monthSelection = $scope.selected_value;
 			$scope.monthdisplay = $scope.monthSelection;
 			console.log($scope.selected_value + " selection");
+			console.log($scope.selected_value);
 		}
 
 }) // END SCRIPT
-
