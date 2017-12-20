@@ -121,25 +121,20 @@
 			<div class="month-title">
 				<h2>Month Selection</h2>
 				<div class="month-select">
-					<h3>{{selected_value}}</h3>
-					<select class="dropdown" ng-model="selected_value" ng-repeat="monthdropdown in monthdata" ng-change="update()">
-						<option value="" disabled selected>Select New Month</option>
-						<option ng-repeat="monthlist in monthdropdown.monthstuff" value="{{monthlist.name}}">{{monthlist.name}}</option>						
-				    </select>
 					
+					<h3>{{selected_value.month}}</h3>
+					<select class="dropdown" ng-model="selected_value" ng-change="update()">
+							<option value="" disabled selected>Select New Month</option>
+							<option ng-repeat="month in monthdata" ng-value="month">{{month.month}}</option>
+					</select>
 				</div>
 			</div>	
 			<div class="month-info" ng-controller="monthController">
-				<h3>{{monthdisplay}}</h3>
+				<h3>{{selected_value.month}}</h3>
 				<!--<h4>Total Sales: 205 cups</h4>-->
 				<h4>Total Sales: 205 cups</h4>
 				<h5>Weekly Goal: 100</h5>
-				<p ng-repeat="week in monthdata">Week {{week.id}}: {{week.info}} cups</p><!--This data will be pulled in from json file later -->
-				
-				<p class="week1">Week 1: 25 cups</p>
-				<p class="week2">Week 2: 35 cups</p>
-				<p class="week3">Week 3: 85 cups</p>
-				<p class="week4">Week 4: 60 cups</p>
+				<p ng-repeat="week in selected_value.weeks track by $index">Week {{$index + 1}}: {{week}} cups</p><!--This data will be pulled in from json file later -->
 
 				<div class="profit-container">
 					<h3>Total Profit: &#36;253.75</h3><!--This data will be pulled in from json file later -->
@@ -147,7 +142,7 @@
 			</div>
 
 			<div class="graph-container"><!--This data will be pulled in from json file later -->
-				<h3>{{monthdisplay}}</h3>
+				<h3>{{selected_value.month}}</h3>
 				<div class="graph-scale">
 					<p>100</p>
 					<p class="mid-value">50</p>
